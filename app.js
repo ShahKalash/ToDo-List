@@ -33,7 +33,7 @@ app.post('/signup', (req, res) => {
     res.redirect('/' + req.body.name);
 });
 app.get('/', (req, res) => {
-    res.redirect('/home');
+    res.redirect('/signup');
 });
 
 app.get("/:customListName", (req, res) => {
