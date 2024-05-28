@@ -13,16 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Libre+Franklin:wght@200&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>To-Do List</title>
+    <title>To-Do List
+    </title>
 </head>
 
 <body>
     <div class="container">
         <header class="text-center text-light my-4">
-            <h1 class="mb-4">Todo List</h1>
+            <h1 class="mb-4">Todo List : <%=title%>
+            </h1>
             <form class="search" action="/search" method="post">
-                <input class="form-control m-auto" type="text" name="search" placeholder="search todos"
-                    autocomplete="off" />
+                <input class="form-control m-auto" name="search" placeholder="search todos" autocomplete="off" />
+                <input type="hidden" name="title" value="<%=title%>">
             </form>
         </header>
 
@@ -34,6 +36,7 @@
                             <button type="submit" class="btn" value="<%=element._id%>" name="tobedeleted"><i
                                     class="fa fa-trash"></i>
                             </button>
+                            <input type="hidden" value="<%=title%>" name="title">
                         </form>
                 </li>
                 <% }); %>
@@ -44,7 +47,7 @@
             <input class="form-control m-auto" type="text" name="item" autocomplete="off" />
             <br />
             <div class="text-center">
-                <input type="submit" class="btn btn-light" />
+                <button type="submit" value="<%=title%>" name="title" class="btn btn-light">submit</button>
             </div>
         </form>
     </div>
