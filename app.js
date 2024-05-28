@@ -25,6 +25,13 @@ const listSchema = {
 }
 
 const list = mongoose.model("List", listSchema);
+app.get('/signup', (req, res) => {
+    res.render('signup');
+})
+
+app.post('/signup', (req, res) => {
+    res.redirect('/' + req.body.name);
+});
 app.get('/', (req, res) => {
     res.redirect('/home');
 });
